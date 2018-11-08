@@ -4,22 +4,28 @@
     <meta charset="UTF-8" />
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/marked/marked.min.js"></script>
-    <script src="node_modules/pdfmake/build/pdfmake.min.js"></script>
-    <scrit src="vfs_fonts.js"></script>
+    <script src="node_modules/garlic/garlic.js"></script>
     <script src="editor.js"></script>
+    <script src="node_modules/print-js/dist/print.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="editor.css" />
     <link rel="stylesheet" href="github.css" />
-
+    <link rel="stylesheet" href="editor.css" />
+    <link rel="stylesheet" href="node_modules/print-js/dist/print.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP|Syncopate:700" rel="stylesheet">
   </head>
-
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-6">
-          <textarea id="editor" class="form-control"></textarea>
+        <div class="col-1">
+          <div class="title">
+            <h1>翠雨</h1>
+          </div>
         </div>
-        <div class="col-6">
+        <div class="col-5">
+          <textarea id="editor" class="form-control" data-persist="garlic"></textarea>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
           <div class="contain">
             <div id="result"></div>
           </div>
@@ -30,9 +36,10 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
-          <button type="button" class="btn btn-primary" hidden="true">toPDF</button>
+          <button type="button" class="btn btn-primary" id="toPDF">toPDF</button>
         </div>
       </div>
     </div>
+    <div class="footer"></div>
   </body>
 </html>

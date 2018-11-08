@@ -1,7 +1,5 @@
-function emphasis(match, p1, p2, string){
-  console.log(p1, p1.length, p2, p2.length);
+function emphasis(match, p1, p2){
   var index = p1.lastIndexOf(p2);
-  console.log(index, p1, p1.length, p2, p2.length);
   if(index != -1　&& index + p2.length == p1.length)
   {
     var cut_empStr = p1.slice(0, index);
@@ -10,21 +8,47 @@ function emphasis(match, p1, p2, string){
   return match;
 }
 
-function ruby(match, p1, p2, string)
+function ruby(match, p1, p2)
 {
   console.log(match, p1, p2);
   return '<ruby>' + p1 + '<rt>' + p2 + '</rt></ruby>';
 }
 
-function strong(match, p1, p2, string)
+function strong(match, p1, p2)
 {
-  var index = p1.indexOf(p2);
-  if(index != -1)
+  var index = p1.lastIndexOf(p2);
+  if(index != -1 && index + p2.length == p1.length)
   {
     var cut_empStr = p1.slice(0, index);
     return cut_empStr + '<strong>' + p2 + '</strong>';
   }
   return match;
+}
+
+function title(match, p1, p2, string)
+{
+  var index = p1.lastIndexOf(p2);
+  if(index != -1 && index + p2.length == p1.length)
+  {
+    var cut_empStr = p1.slice(0, index);
+    return cut_empStr + '<span class=\"' + string + '\">' + p2 + '</span>';
+  }
+  return match;
+}
+
+function primaryTitle(match, p1, p2)
+{
+  return title(match, p1, p2, "primaryTitle");
+}
+
+function middleTitle(match, p1, p2)
+{
+  return title(match, p1, p2, "middleTitle");
+}
+
+function subTitle(match, p1, p2)
+{
+  return title(match, p1, p2, "subTitle");
 }
 
 $(function(){
@@ -36,6 +60,9 @@ $(function(){
     html = html.replace(/[｜](.+?)《(.+?)》/g, ruby);
     html = html.replace(/(.+?)［＃「(.+?)」に傍点］/g, emphasis);
     html = html.replace(/(.+?)［＃「(.+?)」は太字］/g, strong);
+    html = html.replace(/(.+?)［＃「(.+?)」は大見出し］/g, primaryTitle);
+    html = html.replace(/(.+?)［＃「(.+?)」は中見出し］/g, middleTitle);
+    html = html.replace(/(.+?)［＃「(.+?)」は小見出し］/g, subTitle);
     $('#result').html(html);
   });
 
@@ -44,6 +71,11 @@ $(function(){
     $(this).toggleClass('vertical');
   });
 
-  const handler = () => {
-  };
+//  $('textarea').garlic();
+//  $('[rel=persist]').garlic();
+
+  $('#toPDF').click(function(){
+    console.log("clicked button");
+    printJS('result', 'html');
+  });
 });
