@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/marked/marked.min.js"></script>
+    <script src="node_modules/pdfmake/build/pdfmake.min.js"></script>
+    <scrit src="vfs_fonts.js"></script>
+    <script src="editor.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="editor.css" />
+    <link rel="stylesheet" href="github.css" />
+
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <textarea id="editor" class="form-control"></textarea>
+        </div>
+        <div class="col-6">
+          <div class="contain">
+            <div id="result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="button" class="btn btn-primary">toPDF</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
