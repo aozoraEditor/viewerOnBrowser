@@ -11,7 +11,7 @@
 - ダウンロードボタンをクリックすると印刷画面が表示されます。そのうち縦書きに対応します。
 
 
-![screenshot](https://user-images.githubusercontent.com/44860769/48186997-15258e00-e37d-11e8-9717-1fc0bec0323a.png)
+![screenshot](https://user-images.githubusercontent.com/44860769/48302495-f7a12180-e540-11e8-8f80-1e4660a6cce0.png)
 
 
 
