@@ -10,7 +10,6 @@ function emphasis(match, p1, p2){
 
 function ruby(match, p1, p2)
 {
-  console.log(match, p1, p2);
   return '<ruby>' + p1 + '<rt>' + p2 + '</rt></ruby>';
 }
 
@@ -51,6 +50,12 @@ function subTitle(match, p1, p2)
   return title(match, p1, p2, "subTitle");
 }
 
+function newline(match, p1, p2)
+{
+  console.log("input new line code");
+  return "<p>　</p>";
+}
+
 $(function(){
   marked.setOptions({breaks: true});
   $('#editor').keyup(function(){
@@ -63,6 +68,7 @@ $(function(){
     html = html.replace(/(.+?)［＃「(.+?)」は大見出し］/g, primaryTitle);
     html = html.replace(/(.+?)［＃「(.+?)」は中見出し］/g, middleTitle);
     html = html.replace(/(.+?)［＃「(.+?)」は小見出し］/g, subTitle);
+    html = html.replace(/\n/g, newline);
     $('#result').html(html);
   });
 

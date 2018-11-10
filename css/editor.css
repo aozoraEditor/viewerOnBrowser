@@ -126,6 +126,7 @@ textarea {
   height:80vh;
   line-height: 2em;
   font-size: calc(100% * 1vw);
+  padding-right:-5px;
 }
 
 /***** footer *****/
