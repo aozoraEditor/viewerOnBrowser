@@ -1,0 +1,33 @@
+
+.primaryTitle
+{
+  font-size: 180%;
+  font-weight:bold;
+  padding:initial;
+  padding-left: 10px auto 5px 5px;
+  line-height:2.5em;
+}
+
+.middleTitle
+{
+  font-size: 150%;
+  font-weight:bold;
+  padding:initial;
+  padding-left: 10px auto 5px 5px;
+  line-height:2em;
+}
+
+.subTitle
+{
+  font-size: 120%;
+  font-weight:bold;
+  padding:initial;
+  padding-left: 10px auto 5px 5px;
+  line-height:1.8em;
+}
+
+.emp {
+    -webkit-text-emphasis: sesame;
+    text-emphasis: sesame;
+  }
+  

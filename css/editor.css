@@ -1,0 +1,136 @@
+*{
+  box-sizing: border-box;
+  padding:0;
+  margin:0;
+}
+
+#menu
+{
+  margin: 10px 5px;
+  padding: 10px;
+  max-width:initial;
+}
+
+.row
+{
+  width:100%;
+}
+
+.title {
+  text-align:center;
+  vertical-align:initial;
+  vertical-align:middle;
+  height:100%;
+  padding:5px;
+  color:#8a8a8a;
+}
+
+#toPDF
+{
+  padding:initial;
+  padding-left:13px;
+  display: inline-block;
+  text-decoration: none;
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .6s;
+  font-weight: bold;
+  background: #fff;
+  border: solid 2px #75cf00;
+}
+
+.arrow {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #75cf00;
+  border-right: 2px solid #75cf00;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  }
+
+  .device {
+    display: block;
+    width: 12px;
+    height: 8px;
+    border-bottom: 2px solid #75cf00;
+    }
+
+/***** Editor style *****/
+#main
+{
+  margin:initial;
+  padding:initial;
+  width:initial;
+  height:initial;
+  margin-left: 10px;
+  margin-right:10px;
+  max-width:initial;
+  text-align:left;
+  width:100%;
+  height: 100vh;
+}
+
+#editor
+{
+  height: 100%;
+  width:45vw;
+  margin-left: 10px;
+}
+
+.contain
+{
+    text-align:left;
+    border: 1px solid #cacaca;
+    padding:5px;
+    padding-top:10px;
+}
+
+.contain .vertical
+{
+    text-align:end;
+}
+
+textarea {
+  resize: vertical;
+  height: 80vh;
+  width:40vw;
+}
+
+#result{
+  overflow:auto;
+  /*font-family: 'Noto Serif JP', sans-serif;*/
+  height:80vh;
+  width:45vw;
+  margin-left: 10px;
+}
+
+.vertical > #result {
+  /*padding:10px 0;*/
+  writing-mode: bertical-rl;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  text-align:justify;
+  display:inline-block;
+  word-break:normal;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  -ms-column-count: 1;
+  column-count: 1;
+  line-break:loose;
+  width:45vw;
+  height:80vh;
+  line-height: 2em;
+  font-size: calc(100% * 1vw);
+}
+
+/***** footer *****/
+.footer
+{
+  text-align:center;
+  vertical-align: center;
+}

@@ -71,11 +71,10 @@ $(function(){
     $(this).toggleClass('vertical');
   });
 
-//  $('textarea').garlic();
-//  $('[rel=persist]').garlic();
+  $('textarea').garlic();
+  $('[rel=persist]').garlic();
 
   $('#toPDF').click(function(){
-    console.log("clicked button");
     printJS('result', 'html');
   });
 });
