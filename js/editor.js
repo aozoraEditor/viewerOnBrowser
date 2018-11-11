@@ -58,6 +58,7 @@ function newline(match, p1, p2)
 
 $(function(){
   marked.setOptions({breaks: true});
+  var previewWindow = null;
   $('#editor').keyup(function(){
     var src = $(this).val();
     var html = marked(src);
@@ -81,6 +82,15 @@ $(function(){
   $('[rel=persist]').garlic();
 
   $('#toPDF').click(function(){
-    printJS('result', 'html');
+    console.log("click");
+    //printJS('result', 'html');
+    previewWindow = window.open('preview.html', "preview");
+    var html = $('#result').html();
+    console.log(html);
+    // previewWindow.postMessage(html);
+    // var previewWindow_id = $(previewWindow.document).find('#preview_result');
+    // console.log(previewWindow_id.html());
+    // previewWindow_id.val(html);
+    // console.log(previewWindow_id.val());
   });
 });

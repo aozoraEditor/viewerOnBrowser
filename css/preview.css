@@ -1,0 +1,26 @@
+.vertical
+{
+    text-align:end;
+}
+
+.vertical .preview{
+  overflow:auto;
+  /*font-family: 'Noto Serif JP', sans-serif;*/
+  height:80vh;
+  margin-left: 10px;
+  /*padding:10px 0;*/
+  writing-mode: bertical-rl;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  text-align:justify;
+  display:inline-block;
+  word-break:normal;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  -ms-column-count: 1;
+  column-count: 1;
+  line-break:loose;
+  line-height: 2em;
+  font-size: calc(100% * 1vw);
+  padding-right:-5px;
+}
