@@ -6,7 +6,7 @@
 .vertical .preview{
   overflow:auto;
   /*font-family: 'Noto Serif JP', sans-serif;*/
-  height:80vh;
+  height:600px;
   margin-left: 10px;
   /*padding:10px 0;*/
   writing-mode: bertical-rl;
@@ -21,6 +21,5 @@
   column-count: 1;
   line-break:loose;
   line-height: 2em;
-  font-size: calc(100% * 1vw);
-  padding-right:-5px;
+  font-size: 15px;
 }
