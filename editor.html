@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/marked/marked.min.js"></script>
-    <script src="js/garlic/garlic.js"></script>
-    <script src="js/editor.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/editor.css" />
-    <link rel="stylesheet" href="css/aozora.css" />
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP|Syncopate:700" rel="stylesheet">
-  </head>
-  <body>
-    <div class="container" id="menu">
-      <div class="row">
-        <div class="col-sm-3">
-          <div class="title">TITLE</div>
-        </div>
-        <div class="col-sm-8"></div>
-        <div class="col-sm-1">
-          <button type="button" class="btn btn-group" id="toPDF"><div class="arrow"></div><div class="device"></div></button>
-        </div>
-      </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/marked/marked.min.js"></script>
+  <script src="node_modules/vue/dist/vue.min.js"></script>
+  <script src="js/editor.js"></script>
+  <link rel="stylesheet" href="css/editor.css" />
+  <link rel="stylesheet" href="css/aozora.css" />
+  <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP|Syncopate:700" rel="stylesheet">
+</head>
+
+<body>
+  <div id="main">
+    <textarea id="editor" class="form-control" v-model='input' debounce='100' placeholder="ここに文字を入力してください"></textarea>
+    <div class="contain" id="preview">
+      <div id="result" v-on:click="vertical">{{ input | convert}}</div>
     </div>
-    <div class="container" id="main">
-      <div class="row">
-        <div class="col-6">
-          <textarea id="editor" class="form-control" data-persist="garlic"></textarea>
-        </div>
-        <div class="col-6">
-          <div class="contain">
-            <div id="result"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="footer"></div>
-  </body>
+  </div>
+</body>
+
 </html>

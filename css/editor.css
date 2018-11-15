@@ -67,8 +67,6 @@
   padding:initial;
   width:initial;
   height:initial;
-  margin-left: 10px;
-  margin-right:10px;
   max-width:initial;
   text-align:left;
   width:100%;
@@ -78,35 +76,44 @@
 #editor
 {
   height: 100%;
-  width:45vw;
-  margin-left: 10px;
 }
 
-.contain
+#main
 {
-    text-align:left;
-    border: 1px solid #cacaca;
-    padding:5px;
-    padding-top:10px;
+  margin:0;
+  height: 100vh;
 }
 
+
+textarea, #main div, .contain {
+  display:inline-block;
+  width:48vw;
+  height:95%;
+  vertical-align:top;
+  text-align:left;
+}
+
+textarea{
+  padding:20px;
+  background-color: #f6f6f6;
+  border-right: 1px solid #ccc;
+  outline:none;
+  resize:none;
+  border:none;
+  font-family: 'Noto Serif JP', sans-serif;
+}
+
+.contain {
+  padding:20px;
+}
 .contain .vertical
 {
     text-align:end;
 }
 
-textarea {
-  resize: vertical;
-  height: 80vh;
-  width:40vw;
-}
-
 #result{
   overflow:auto;
-  /*font-family: 'Noto Serif JP', sans-serif;*/
-  height:80vh;
-  width:45vw;
-  margin-left: 10px;
+  font-family: 'Noto Serif JP', sans-serif;
 }
 
 .vertical > #result {
@@ -115,7 +122,7 @@ textarea {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   text-align:justify;
-  display:inline-block;
+/*  display:inline-block;*/
   word-break:normal;
   -webkit-column-count: 1;
   -moz-column-count: 1;
@@ -126,7 +133,6 @@ textarea {
   height:80vh;
   line-height: 2em;
   font-size: calc(100% * 1vw);
-  padding-right:-5px;
 }
 
 /***** footer *****/
