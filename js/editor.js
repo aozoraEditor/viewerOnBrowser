@@ -1,3 +1,4 @@
+
 function emphasis(match, p1, p2) {
   var index = p1.lastIndexOf(p2);
   if (index != -1 && index + p2.length == p1.length) {
@@ -41,6 +42,10 @@ function subTitle(match, p1, p2) {
   return title(match, p1, p2, "subTitle");
 }
 
+function pagebreak(match, p1) {
+  return "<p id=\"pagebreak\"></p>";
+}
+
 function convert(str) {
   console.log(str);
   var html = str.replace(/\n/g, '　\n');
@@ -51,6 +56,7 @@ function convert(str) {
   html = html.replace(/(.+?)［＃「(.+?)」は大見出し］/g, primaryTitle);
   html = html.replace(/(.+?)［＃「(.+?)」は中見出し］/g, middleTitle);
   html = html.replace(/(.+?)［＃「(.+?)」は小見出し］/g, subTitle);
+  html = html.replace(/［＃改ページ］/g, pagebreak);
   html = html.replace(/\n/g, '　<br />');
   console.log(html);
   if (html == '') return '';
@@ -75,43 +81,22 @@ window.onload = function () {
       }
     }
   });
+
+  new Vue({
+    el: '#toPDF',
+    methods: {
+      print: function (event) {
+        var hide_elm = $('.form-control, .header');
+        hide_elm.addClass('print');
+        if ($('.vertical') !== null) {
+          $('.contain').toggleClass('pdf');
+        }
+        console.log($('.contain'));
+        window.print();
+        hide_elm.removeClass('print');
+        $('.contain').removeClass('pdf');
+      }
+    }
+  });
 };
 
-//  $(function(){
-//   marked.setOptions({breaks: true});
-//   var previewWindow = null;
-//   $('#editor').keyup(function(){
-//     var src = $(this).val();
-//     var html = marked(src);
-
-//     html = html.replace(/[｜](.+?)《(.+?)》/g, ruby);
-//     html = html.replace(/(.+?)［＃「(.+?)」に傍点］/g, emphasis);
-//     html = html.replace(/(.+?)［＃「(.+?)」は太字］/g, strong);
-//     html = html.replace(/(.+?)［＃「(.+?)」は大見出し］/g, primaryTitle);
-//     html = html.replace(/(.+?)［＃「(.+?)」は中見出し］/g, middleTitle);
-//     html = html.replace(/(.+?)［＃「(.+?)」は小見出し］/g, subTitle);
-//     html = html.replace(/\n/g, newline);
-//     $('#result').html(html);
-//   });
-
-//   $('.contain').on('click', function(event){
-//     event.preventDefault();
-//     $(this).toggleClass('vertical');
-//   });
-
-//   $('textarea').garlic();
-//   $('[rel=persist]').garlic();
-
-//   $('#toPDF').click(function(){
-//     console.log("click");
-//     //printJS('result', 'html');
-//     previewWindow = window.open('preview.html', "preview");
-//     var html = $('#result').html();
-//     console.log(html);
-//     // previewWindow.postMessage(html);
-//     // var previewWindow_id = $(previewWindow.document).find('#preview_result');
-//     // console.log(previewWindow_id.html());
-//     // previewWindow_id.val(html);
-//     // console.log(previewWindow_id.val());
-//   });
-// });

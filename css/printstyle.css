@@ -1,16 +1,1 @@
-#header, #side, #footer {
-    display:none;
-}
-
-/*.main{width: 100%; float:block; position: center;}
-
-.div#preview_result
-{
-  width: 251mm;
-  height: 172mm;
-  page-break-after:always;
-}
-
-.div#preview_result:last-child{
-  page-break-after:auto;
-}*/
+.print{display:none;}

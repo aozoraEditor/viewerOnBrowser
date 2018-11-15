@@ -6,19 +6,25 @@
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/marked/marked.min.js"></script>
   <script src="node_modules/vue/dist/vue.min.js"></script>
+  <script src="node_modules/jspdf/dist/jspdf.min.js"></script>
   <script src="js/editor.js"></script>
   <link rel="stylesheet" href="css/editor.css" />
   <link rel="stylesheet" href="css/aozora.css" />
+  <link rel="stylesheet" type="text/css" media="print" href="css/printstyle.css" />
   <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP|Syncopate:700" rel="stylesheet">
 </head>
 
 <body>
+  <div class="header" id="menu">
+    <div id="toPDF" v-on:click="print">Export PDF</div>
+  </div>
   <div id="main">
     <textarea id="editor" class="form-control" v-model='input' debounce='100' placeholder="ここに文字を入力してください"></textarea>
     <div class="contain" id="preview">
       <div id="result" v-on:click="vertical">{{ input | convert}}</div>
     </div>
   </div>
+
 </body>
 
 </html>
