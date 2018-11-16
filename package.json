@@ -2,7 +2,7 @@
   "name": "vieweronbrowser",
   "version": "1.0.0",
   "description": "青空文庫記法のテキストをWeb上で縦書きでプレビューしながら入力できるシンプルなエディタです",
-  "main": "editor.js",
+  "main": "app.js",
   "dependencies": {
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
@@ -12,7 +12,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
