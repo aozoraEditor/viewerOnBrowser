@@ -7,8 +7,7 @@
 #menu
 {
   width: 100vw;
-  height:5vh;
-  padding:10px;
+  height:0vh;
 }
 
 .row
@@ -26,13 +25,10 @@
 
 #toPDF
 {
-  padding:initial;
-  padding-left:3px;
-  display: block;
-  text-decoration: none;
-  float:right;
-  transition: .6s;
-  font-weight: bold;
+  position:fixed;
+  bottom:10px;
+  right:10px;
+  
 }
 
 /***** Editor style *****/
@@ -43,52 +39,50 @@
   width:initial;
   height:initial;
   max-width:initial;
-  text-align:left;
-  width:100vw;
-  height: 90vh;
+  text-align:center;
+  vertical-align: middle;
+  width:98vw;
+  height: 95vh;
+  padding :10px;
 }
 
 #editor
 {
   height: 100%;
-}
-
-#main
-{
-  margin:0;
-  height: 100vh;
+  border-right:1px solid #aaa;
 }
 
 
 textarea, .contain {
   display:inline-block;
-  width:48vw;
-  height:95%;
+  width:45%;
+  height:90%;
   vertical-align:top;
   text-align:left;
 }
 
 textarea{
   padding:20px;
-  background-color: #f6f6f6;
   border-right: 1px solid #ccc;
   outline:none;
   resize:none;
   border:none;
-  font-family: 'Noto Serif JP', sans-serif;
+/*  font-family: 'Noto Serif JP', sans-serif;*/
+  font-family:sans-serif;
+  font-size:15px;
 }
 
-.contain {
-  padding:20px;
-}
 .contain .vertical
 {
-    text-align:end;
+  text-align:end;
 }
+
 
 #result{
   overflow:auto;
   font-family: 'Noto Serif JP', sans-serif;
+  width:100%;
+  height:93vh;
 }
 
 #preview #pagebreak
@@ -105,41 +99,51 @@ textarea{
   page-break-after: always;
 }
 
-#pagebreak::after{
-  content:"----------改ページ-------------";
+.preview
+{
+  width:100vw;
+  text-align:center;
+  margin-top:20px;
 }
 
+.preview.vertical
+{
+  text-align:center;
+  width:95vw;
+  height: 80vh;
+  background:#ccc;
+}
+
+.preview #result
+{
+  text-align:left;
+  overflow:initial;
+}
+
+.preview.vertical #result
+{
+  font-size:15px;
+  width:90vw;
+  height: 600px;
+  column-gap: 100px;
+
+}
 
 .vertical > #result {
-  /*padding:10px 0;*/
   writing-mode: bertical-rl;
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
   text-align:justify;
-/*  display:inline-block;*/
   word-break:normal;
   -webkit-column-count: 1;
   -moz-column-count: 1;
   -ms-column-count: 1;
   column-count: 1;
   line-break:loose;
-  width:45vw;
-  height:80vh;
   line-height: 2em;
+  column-gap:30px;
+  width:45vw;
   font-size: calc(100% * 1vw);
-}
-
-.pdf
-{
-  width:100vw;
-}
-
-.vertical.pdf #result
-{
-  width:100vw;
-  position:aboluste;
-  right:0;
-  top: 0;
 }
 
 /***** footer *****/

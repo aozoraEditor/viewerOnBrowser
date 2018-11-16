@@ -89,12 +89,12 @@ window.onload = function () {
         var hide_elm = $('.form-control, .header');
         hide_elm.addClass('print');
         if ($('.vertical') !== null) {
-          $('.contain').toggleClass('pdf');
+          $('.contain').toggleClass('preview');
         }
         console.log($('.contain'));
         window.print();
         hide_elm.removeClass('print');
-        $('.contain').removeClass('pdf');
+        $('.contain').removeClass('preview');
       }
     }
   });
