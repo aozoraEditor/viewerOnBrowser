@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP|Syncopate:700" rel="stylesheet">
+    <title>軽量縦書きマークアップエディタ/縦覧</title>
+</head>
+
+<body>
+    <div class="main_body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div id="title">
+                        <h1><img src="img/icon.png"></h1>
+                        <h1><ruby>縦覧帳<rt>じゅうらんちょう</rt></ruby></h1>
+                        <h2>日本語のためのMarkdownエディタ</h2>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row" style="border-bottom: 1px solid #ccc;">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 contents vertical">
+                    <div id="about">
+                        <p>横のものを縦にする。縦のものを横にする。<ruby>ルビ<rt>るび</rt></ruby>を打つ。<span class="emphasis">強調</span>する。長文を書く。短文を書く。</p>
+                        <p>豊富な機能はいらない、ただ書けるだけでいい。でも、書きにくいのは、いや。</p>
+                        <p>そういう、<ruby>縦<rt>ほしいまま</rt></ruby>に書いて見るエディタがあったっていいじゃないか。</p>
+                        <p>縦覧帳なら全部あります。</p>
+                    </div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-12">
+                    <div class="try"><a href="editor.html">使ってみる</a></div>
+                </div>
+            </div>
+            <div class="row feature">
+                <div class="col-md-12" style="margin-bottom: 40px;">
+                    <h1 class="subtitle">Why 縦覧帳？</h1>
+                    <div>縦覧帳では文章入力に集中できるように、機能を最低限にしぼっています。
+                        <br><span style="font-size:80%;">（機能を増やしたデスクトップ版は後日リリース予定です）。</span>
+                    </div>
+                </div>
+                <div class="col-md-6 feature-item">
+                    <h1><img src="img/aozora_markdown.png"></h1>
+                    <h2>日本語マークダウン</h2>
+                    <div>
+                        <p>日本語の複雑な表記ルールをWeb上で再現するには大変です。縦覧帳ではいくつかの記法をおぼえれば、誰でも簡単に表現できます。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 feature-item">
+                    <h1><img src="img/switch.png"></h1>
+                    <h2>縦横切替</h2>
+                    <div>
+                        <p>いちいちメニューを開く必要はありません。プレビューをクリックするだけで切り替えられます。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 feature-item">
+                    <h1><img src="img/print.png"></h1>
+                    <h2>縦書き印刷・PDF出力</h2>
+                    <div>
+                        <p>面倒な禁則処理の設定をする必要はありません。ワンクリックで完了です。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 feature-item">
+                    <h1><img src="img/preview.png"></h1>
+                    <h2>プレビューとエディタの分類</h2>
+                    <div>
+                        <p>PCの変換機能は縦書きのためには作られていません。変換中に文字が隠れてしまってわずらわしい。そこでエディタとプレビューは分離しました。</p>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="try"><a href="editor.html">使ってみる</a></div>
+                </div>
+            </div>
+            <div class="how">
+                <h1>使い方</h1>
+                <ol>
+                    <li>左側のエディタに文字を入力します。</li>
+                    <li>右側のプレビューで確認します。プレビューをクリックすると縦横が切り替わります。</li>
+                    <li>右下のダウンロードボタンをクリックすると印刷画面が開きます。PDFにする場合は「PDFに出力する」を選択しましょう（設定画面はブラウザや環境によります）</li>
+                </ol>
+                <p>これだけです！</p>
+                <br>
+                <br>
+                <h2>チートシート（順次追加予定)</h2>
+                <table>
+                    <tr>
+                        <th>名称</th>
+                        <th>記法</th>
+                        <th>例</th>
+                        <th>プレビュー例</th>
+                        <th>注記</th>
+                    </tr>
+                    <tr>
+                        <td>ルビ</td>
+                        <td>｜ルビを振る文字《ルビ》</td>
+                        <td>｜漢字《かんじ》にルビを振ります</td>
+                        <td><ruby>漢字<rt>かんじ</rt>にルビを振ります</ruby></td>
+                        <td>青空文庫記法ではルビを振る文字の前に縦棒（｜）を書かなくてもルビを振ることができますが、縦覧帳では対応しません。</td>
+                    </tr>
+                    <tr>
+                        <td>圏点</td>
+                        <td>［＃「圏点をつける文字」に傍点］</td>
+                        <td>強調［＃「強調」に傍点］します</td>
+                        <td><span class="emphasis">強調</span>します</td>
+                        <td>青空記法以外のマークダウン方式にも対応する予定です</td>
+                    </tr>
+                    <tr>
+                        <td>太字</td>
+                        <td>［＃「太字にする文字」は太字］</td>
+                        <td>太らせたかった［＃「太らせたかった」は太字］んです</td>
+                        <td><span style="font-weight:bold;">太らせたかった</span>んです</td>
+                        <td>青空記法以外のマークダウン方式にも対応する予定です</td>
+                    </tr>
+                    <tr>
+                        <td>大見出し<br>中見出し<br>小見出し</td>
+                        <td>［＃「大見出しの文字」は大見出し］<br>［＃「中見出しの文字」は中見出し］<br>［＃「小見出しの文字」は小見出し］</td>
+                        <td>見出し［＃「見出し」は大見出し］でも<br>文字を大きく［＃「大きく」は中見出し］したい時でも<br>使えます［＃「使えます」は小見出し］。</td>
+                        <td><span style="font-size:180%;font-weight:bold;">見出し</span>でも<br>文字を<span style="font-size:150%;font-weight:bold;">大きく</span>したいときでも<br><span
+                                style="font-size:120%; font-weight: bold">使えます</span>。</td>
+                        <td></td>
+                    </tr>
+                </table>
+                縦覧帳はmarked.jsを使用しているので、その他にも多様なマークダウンが利用できます。marked.jsで対応している記法はこちらの<a href="https://marked.js.org/demo/?text=Marked%20-%20Markdown%20Parser%0A%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%0A%0A%5BMarked%5D%20lets%20you%20convert%20%5BMarkdown%5D%20into%20HTML.%20%20Markdown%20is%20a%20simple%20text%20format%20whose%20goal%20is%20to%20be%20very%20easy%20to%20read%20and%20write%2C%20even%20when%20not%20converted%20to%20HTML.%20%20This%20demo%20page%20will%20let%20you%20type%20anything%20you%20like%20and%20see%20how%20it%20gets%20converted.%20%20Live.%20%20No%20more%20waiting%20around.%0A%0AHow%20To%20Use%20The%20Demo%0A-------------------%0A%0A1.%20Type%20in%20stuff%20on%20the%20left.%0A2.%20See%20the%20live%20updates%20on%20the%20right.%0A%0AThat%27s%20it.%20%20Pretty%20simple.%20%20There%27s%20also%20a%20drop-down%20option%20in%20the%20upper%20right%20to%20switch%20between%20various%20views%3A%0A%0A-%20**Preview%3A**%20%20A%20live%20display%20of%20the%20generated%20HTML%20as%20it%20would%20render%20in%20a%20browser.%0A-%20**HTML%20Source%3A**%20%20The%20generated%20HTML%20before%20your%20browser%20makes%20it%20pretty.%0A-%20**Lexer%20Data%3A**%20%20What%20%5Bmarked%5D%20uses%20internally%2C%20in%20case%20you%20like%20gory%20stuff%20like%20this.%0A-%20**Quick%20Reference%3A**%20%20A%20brief%20run-down%20of%20how%20to%20format%20things%20using%20markdown.%0A%0AWhy%20Markdown%3F%0A-------------%0A%0AIt%27s%20easy.%20%20It%27s%20not%20overly%20bloated%2C%20unlike%20HTML.%20%20Also%2C%20as%20the%20creator%20of%20%5Bmarkdown%5D%20says%2C%0A%0A%3E%20The%20overriding%20design%20goal%20for%20Markdown%27s%0A%3E%20formatting%20syntax%20is%20to%20make%20it%20as%20readable%0A%3E%20as%20possible.%20The%20idea%20is%20that%20a%0A%3E%20Markdown-formatted%20document%20should%20be%0A%3E%20publishable%20as-is%2C%20as%20plain%20text%2C%20without%0A%3E%20looking%20like%20it%27s%20been%20marked%20up%20with%20tags%0A%3E%20or%20formatting%20instructions.%0A%0AReady%20to%20start%20writing%3F%20%20Either%20start%20changing%20stuff%20on%20the%20left%20or%0A%5Bclear%20everything%5D(%3Ftext%3D)%20with%20a%20simple%20click.%0A%0A%5BMarked%5D%3A%20https%3A%2F%2Fgithub.com%2Fmarkedjs%2Fmarked%2F%0A%5BMarkdown%5D%3A%20http%3A%2F%2Fdaringfireball.net%2Fprojects%2Fmarkdown%2F%0A&options=%7B%0A%20%22baseUrl%22%3A%20null%2C%0A%20%22breaks%22%3A%20false%2C%0A%20%22gfm%22%3A%20true%2C%0A%20%22headerIds%22%3A%20true%2C%0A%20%22headerPrefix%22%3A%20%22%22%2C%0A%20%22highlight%22%3A%20null%2C%0A%20%22langPrefix%22%3A%20%22language-%22%2C%0A%20%22mangle%22%3A%20true%2C%0A%20%22pedantic%22%3A%20false%2C%0A%20%22sanitize%22%3A%20false%2C%0A%20%22sanitizer%22%3A%20null%2C%0A%20%22silent%22%3A%20false%2C%0A%20%22smartLists%22%3A%20false%2C%0A%20%22smartypants%22%3A%20false%2C%0A%20%22tables%22%3A%20true%2C%0A%20%22xhtml%22%3A%20false%0A%7D">デモ</a>で確認してみてください。
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="try"><a href="editor.html">使ってみる</a></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="thanks">
+                <h1>参考</h1>
+                <ul>
+                    <li><a href="https://tategaki.github.io/">縦書きWeb普及委員会</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -48,7 +48,7 @@ function pagebreak(match, p1) {
 
 function convert(str) {
   var html = str.replace(/\n/g, '　\n');
-  html = marked(html);
+  html = marked(html, { sanitize: true });
   html = html.replace(/[｜](.+?)《(.+?)》/g, ruby);
   html = html.replace(/(.+?)［＃「(.+?)」に傍点］/g, emphasis);
   html = html.replace(/(.+?)［＃「(.+?)」は太字］/g, strong);

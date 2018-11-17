@@ -3,7 +3,6 @@ var fs = require('fs');
 console.log("starting...");
 var server = http.createServer(function (request, response) {
     var url = request.url.slice(1);
-    if (url == "index.html" || url == "") { url = "editor.html"; }
     console.log(url);
     var dotoffset = request.url.lastIndexOf('.');
     var mimetype = dotoffset == -1

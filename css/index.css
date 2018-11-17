@@ -1,0 +1,249 @@
+*{
+  margin:0;
+  padding:0;
+  font-family:'Noto Serif JP', sans-serif;
+}
+
+.main_body
+{
+  width:85vw;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.try
+{
+  margin-top: 40px;
+  text-align:center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.try a{
+  border: 1px solid #ccc;
+  padding: 10px 50px;
+  border-radius: 5px;
+  color: #333;
+}
+
+.try a:hover
+{
+  background :#f1f1f1;
+}
+
+#title
+{
+  text-align:center;
+  margin-top: 60px;
+}
+
+#title h1{
+  line-height: 3.5em;
+}
+
+rt
+{
+  font-size: 40%;
+}
+#title h2
+{
+  font-size: 90%;
+  color:#6a6a6a;
+  margin-bottom:50px;
+}
+
+
+.contents
+{
+  text-align:center;
+  display:block;
+}
+
+.vertical{
+  writing-mode: bertical-rl;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode:vertical-rl;
+  text-align:justify;
+  text-justify:inter-ideograph;
+  word-break:normal;
+}
+
+.emphasis
+{
+  text-emphasis-style: sesame filled;
+  -webkit-text-emphasis-style:sesame filled;
+  -moz-text-emphasis-style: sesame filled;
+  -ms-text-emphasis-style: sesame filled;
+  text-emphasis-color: #333;
+  -webkit-text-emphasis-color:#333;
+  -moz-text-emphasis-color:#333;
+  -ms-text-emphasis-color: #333;  
+}
+
+#about
+{
+  background:#fffffc;
+  padding:10px;
+  height:300px;
+  column-count: 1;
+  -webkit-column-count: 1;
+  -moz-column-count: 1;
+  -ms-column-count: 1;
+  font-size: 120%;
+  column-gap: 20px;
+  line-height: 2.5em;
+  margin-bottom: 20px;
+}
+
+.feature
+{
+  padding:20px;
+  text-align:left;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom:20px;
+}
+
+.feature h1.subtitle 
+{
+  font-size: 160%;
+  line-height: 200%;
+}
+
+.feature-item
+{
+  padding:10px;
+  border:1px solid #f1f1f1;
+}
+
+.feature-item h1
+{
+  font-size: 100%;
+  padding:20px;
+  text-align:center;
+  min-height: 200px;
+  background: #f5f5f5;
+}
+
+.feature-item h1 img
+{
+  text-align:center;
+  vertical-align: middle;
+}
+
+.feature-item h2{
+  font-size: 120%;
+  font-weight:bold;
+  text-align:center;
+  margin-bottom: 10px;
+}
+
+.feature-item:nth-child(odd)
+{
+  border-right: 1px solid #eee;
+}
+.feature-item:first-child
+{
+  border-bottom: 1px solid #eee;
+}
+
+.feature-item:nth-child(2)
+{
+  border-bottom: 1px solid #eee;
+}
+
+.desc
+{
+  text-align:left;
+}
+
+.how h1{
+  font-size: 160%;
+  line-height: 200%;
+}
+
+.how
+{
+  margin-top: 20px;
+  margin-bottom: 100px;
+  border-bottom: 1px solid #ccc;
+  padding:20px;
+  padding-bottom: 20px;
+}
+
+.how h2
+{
+  font-size: 120%;
+}
+
+.how ol{
+  margin-left: 30px;
+  padding-left: 10px;
+}
+
+.how li
+{
+  margin-left: 20px;
+}
+
+.how table{
+  border: 1px solid #666;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.how table th{
+  border-bottom: 1px solid #ccc;
+  text-align:center;
+  padding: 5px;
+}
+
+.how table tr
+{
+  padding: 10px;
+}
+
+.how table td{
+  min-height: 250px;
+}
+
+.how table td:first-child
+{
+  text-align:center;
+  width: 80px;
+}
+
+.how table td:nth-child(2)
+{
+  width: 250px;
+}
+
+.how table td:nth-child(3)
+{
+  width: 250px;
+}
+
+.how table td:nth-child(4)
+{
+  width: 250px;
+}
+
+.how table tr:nth-child(even)
+{
+  background-color: #f5f5f5; 
+}
+
+
+.thanks h1{
+  font-size: 160%;
+  line-height: 100%;
+  padding: 20px;
+}
+
+.thanks
+{
+  padding: 10px;
+  margin-bottom: 100px;
+}
