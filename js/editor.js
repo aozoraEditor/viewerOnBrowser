@@ -47,7 +47,6 @@ function pagebreak(match, p1) {
 }
 
 function convert(str) {
-  console.log(str);
   var html = str.replace(/\n/g, '　\n');
   html = marked(html);
   html = html.replace(/[｜](.+?)《(.+?)》/g, ruby);
@@ -58,7 +57,6 @@ function convert(str) {
   html = html.replace(/(.+?)［＃「(.+?)」は小見出し］/g, subTitle);
   html = html.replace(/［＃改ページ］/g, pagebreak);
   html = html.replace(/\n/g, '　<br />');
-  console.log(html);
   if (html == '') return '';
   return $('#result').html(html);
 }
@@ -76,7 +74,6 @@ window.onload = function () {
     methods: {
       vertical: function (event) {
         event.preventDefault();
-        console.log("click", $('#preview'));
         $('#preview').toggleClass('vertical');
       }
     }
@@ -91,7 +88,7 @@ window.onload = function () {
         if ($('.vertical') !== null) {
           $('.contain').toggleClass('preview');
         }
-        console.log($('.contain'));
+
         window.print();
         hide_elm.removeClass('print');
         $('.contain').removeClass('preview');
