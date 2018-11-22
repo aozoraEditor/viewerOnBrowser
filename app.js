@@ -2,20 +2,34 @@ var http = require('http');
 var fs = require('fs');
 console.log("starting...");
 var server = http.createServer(function (request, response) {
+    var mimetype = "";
     var url = request.url.slice(1);
     console.log(url);
+    if (request.url === "/") { url = "index.html"; mimetype = "text/html"; request.url = "/index.html"; }
     var dotoffset = request.url.lastIndexOf('.');
-    var mimetype = dotoffset == -1
-        ? 'text/plain'
-        : {
-            '.html': 'text/html',
-            '.ico': 'image/x-icon',
-            '.jpg': 'image/jpeg',
-            '.png': 'image/png',
-            '.gif': 'image/gif',
-            '.css': 'text/css',
-            '.js': 'text/javascript'
-        }[request.url.substr(dotoffset)];
+    console.log(dotoffset, request.rawHeaders);
+    if (dotoffset !== ".map") {
+        mimetype = dotoffset == -1
+            ? 'text/plain'
+            : {
+                '.html': 'text/html',
+                '.ico': 'image/x-icon',
+                '.jpg': 'image/jpeg',
+                '.png': 'image/png',
+                '.gif': 'image/gif',
+                '.css': 'text/css',
+                '.js': 'text/javascript'
+            }[request.url.substr(dotoffset)];
+    }
+    else {
+        dotoffset = request.url.lastIndexOf('.', dotoffset - 1);
+        mimetype = dotoffset == -1
+            ? 'text/plain' : {
+                '.css.map': 'text/css',
+                '.js.map': 'text/javascript'
+            }[request.url.substr(dotoffset)];
+    }
+    console.log(mimetype);
     response.writeHead(200, { "Content-Type": mimetype });
 
     fs.readFile(url, {}, function (err, data) {
@@ -30,6 +44,6 @@ var server = http.createServer(function (request, response) {
     });
 });
 
-server.listen(process.env.PORT || 80, () => {
+server.listen(process.env.PORT || 1234, () => {
     console.log("Server running");
 });
