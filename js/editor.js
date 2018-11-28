@@ -98,6 +98,7 @@ function indentBlockEnd(match) {
 
 function convert(str) {
   var html = str.replace(/\n/g, '　\n');
+  console.log(html);
   html = marked(html, { sanitize: true });
   html = html.replace(/[｜](.+?)《(.+?)》/g, ruby);
   html = html.replace(/(.+?)［＃「(.+?)」に傍点］/g, emphasis);
